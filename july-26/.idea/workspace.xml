@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da828fe9-1d0a-4d34-87d6-5b2a859f9c22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/july-26.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/gokublue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/ultraInstinct.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/vegitaBlue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/vegitaSuperBlue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ts/PreLoader.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ts/Textures.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ts/assets.ts" afterDir="false" />
-    </list>
+    <list default="true" id="da828fe9-1d0a-4d34-87d6-5b2a859f9c22" name="Default Changelist" comment="images and preloader" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,8 +79,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627274405764</updated>
-      <workItem from="1627274407840" duration="5451000" />
+      <workItem from="1627274407840" duration="5811000" />
     </task>
+    <task id="LOCAL-00001" summary="images and preloader">
+      <created>1627280170471</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1627280170472</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +107,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="images and preloader" />
+    <option name="LAST_COMMIT_MESSAGE" value="images and preloader" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
