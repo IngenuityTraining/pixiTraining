@@ -4,7 +4,7 @@ let resources: {[key:string]: ILoaderResource };
 
 export function getAllTexture(): {[key:string]: Texture<Resource> } {
   const keys = Object.keys(resources);
-  const textures: {[key:string]: Texture<Resource> } = {} as {[key:string]: Texture<Resource> };
+  const textures = {} as {[key:string]: Texture<Resource> };
   keys.forEach((key) => {
     textures[key] = resources[key].texture as Texture<Resource>;
   });
