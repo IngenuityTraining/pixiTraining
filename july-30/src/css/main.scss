@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Serif", "sans-serif";
+  overflow: hidden;
+}
+
+canvas{
+  display: block;
+  width:1024px;
+  height:720px;
+}
+
+.progress {
+  position: fixed;
+  top:0;
+  left:0;
+  background: darkgreen;
+  width:0;
+  height: 3px;
+}
