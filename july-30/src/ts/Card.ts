@@ -55,4 +55,10 @@ export class Card extends Container {
     const frameRect = new Rectangle(...data.frame.frame);
     return new Texture(baseTexture, frameRect);
   }
+
+  // eslint-disable-next-line class-methods-use-this
+  public update(delta: number): void {
+    // eslint-disable-next-line no-unused-expressions
+    delta;
+  }
 }

@@ -154,9 +154,9 @@ export class Game {
 
     public update(delta:number):void {
       if (this.isInitialized) {
-        // console.warn(delta);
-        // eslint-disable-next-line no-unused-expressions
-        delta;
+        this.game.children.forEach((child) => {
+          (<Card><unknown>child).update(delta);
+        });
       }
     }
 }
