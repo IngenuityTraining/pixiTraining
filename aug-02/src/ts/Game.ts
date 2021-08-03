@@ -87,6 +87,7 @@ export class Game {
           }
         });
         this.app.stage.on('pointermove', (e) => {
+          // eslint-disable-next-line no-console
           console.log('mouse move', isMoving, e);
           if (isMoving) {
             anyThing.x = e.data.global.x;
