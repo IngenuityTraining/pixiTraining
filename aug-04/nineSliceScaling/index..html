@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9 slice plane and scale</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+</head>
+<body>
+<script>
+const app = new PIXI.Application({
+    width: 1024,
+    height: 720
+});
+document.body.appendChild(app.view);
+app.loader.add('but', 'round-button-small.png').load((loader, resources) => {
+    const but = new PIXI.NineSlicePlane(resources.but.texture, 50,50,50,50);
+    but.width = 900;
+    app.stage.addChild(but);
+
+    const but2 = new PIXI.Sprite(resources.but.texture);
+    but2.width = 900;
+    but2.y = 400;
+    app.stage.addChild(but2);
+});
+</script>
+</body>
+</html>
