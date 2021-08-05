@@ -1,8 +1,11 @@
 {
-  "name": "pixiTraining",
+  "name": "pixi-training",
   "version": "1.0.0",
   "dependencies": {
+    "@pixi-spine/base": "^3.0.7",
+    "@pixi-spine/runtime-4.0": "^3.0.7",
     "gsap": "^3.7.1",
+    "pixi-spine": "^3.0.7",
     "pixi.js": "^6.0.4"
   },
   "private": true,

@@ -27,12 +27,14 @@ function loadComplete(
   onCompleteCallback:(l:Loader, r: ResourceType)=>void,
 ): void {
   setResources(resources);
-  console.log(resources);
   progDiv.style.display = 'none';
   onCompleteCallback(loader, resources);
 }
 
-export function preLoader(assetList: Assets, callback: (l:Loader, r: ResourceType) => void) {
+export function preLoader(
+  assetList: Assets,
+  callback: (l?:Loader, r?: ResourceType) => void,
+): Loader {
   const loader = Loader.shared;
   if (assetList.baseUrl) {
     loader.baseUrl = assetList.baseUrl;
@@ -40,7 +42,7 @@ export function preLoader(assetList: Assets, callback: (l:Loader, r: ResourceTyp
   addAssets(loader, assetList.images);
   loader.onProgress.add(showProgress);
   loader.onComplete.add((l:Loader, res) => {
-    console.log('res ', l.resources);
+    console.warn('loader', l, 'res ', res);
     loadComplete(l, res as any, callback);
   });
   loader.load();

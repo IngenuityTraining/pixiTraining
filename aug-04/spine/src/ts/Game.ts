@@ -1,10 +1,13 @@
 import {
-  Application, Container, Loader,
+  Application, Container,
 } from 'pixi.js';
 import * as PIXI from 'pixi.js';
-import { preLoader, ResourceType } from './PreLoader';
+import { Spine } from 'pixi-spine';
+import { preLoader } from './PreLoader';
 import assets from './assets';
 import { getResource } from './Textures';
+
+(window as any).PIXI = PIXI;
 
 export class Game {
   private stage: Container;
@@ -17,19 +20,20 @@ export class Game {
       this.app = app;
       this.stage = app.stage;
 
-      // const centerX = app.view.width / 2;
-      // const centerY = app.view.height / 2;
-      preLoader(assets, (l:Loader, r:ResourceType) => {
+      const centerX = this.app.view.width / 2;
+      // const centerY = this.app.view.height / 2;
+      const bottom = app.view.height;
+      preLoader(assets, () => {
         this.isInitialized = true;
         const boySpineData = (<any>getResource('boy')).spineData;
-        console.warn('spine data', (<any>r.boy).spineData, l.resources.boy);
         if (boySpineData) {
-          const boy = new (<any>PIXI).spine.Spine(boySpineData);
+          const boy = new Spine(boySpineData);
+          boy.x = centerX;
+          boy.y = bottom;
+          boy.state.setAnimation(0, 'walk', true);
           this.stage.addChild((<unknown>boy) as Container);
         }
       });
-
-      console.warn(this.app);
     }
 
     public update(delta:number):void {
