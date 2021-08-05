@@ -6,10 +6,6 @@ import { Application, Ticker } from 'pixi.js';
 import { Game } from './ts/Game';
 
 window.onload = () => {
-  // const pixiSpineScript = document.createElement('script');
-  // pixiSpineScript.src = 'https://cdn.jsdelivr.net/npm/pixi-spine@3.0.7/lib/all.min.js';
-  // pixiSpineScript.src = './lib/pixi-spine.js';
-  // document.head.appendChild(pixiSpineScript);
 
   const app = new Application({
     width: 1024,

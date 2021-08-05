@@ -1,13 +1,11 @@
 import {
   Application, Container,
 } from 'pixi.js';
-import * as PIXI from 'pixi.js';
+
 import { Spine } from 'pixi-spine';
 import { preLoader } from './PreLoader';
 import assets from './assets';
 import { getResource } from './Textures';
-
-(window as any).PIXI = PIXI;
 
 export class Game {
   private stage: Container;
@@ -21,7 +19,7 @@ export class Game {
       this.stage = app.stage;
 
       const centerX = this.app.view.width / 2;
-      // const centerY = this.app.view.height / 2;
+      const centerY = this.app.view.height / 2;
       const bottom = app.view.height;
       preLoader(assets, () => {
         this.isInitialized = true;
@@ -32,6 +30,14 @@ export class Game {
           boy.y = bottom;
           boy.state.setAnimation(0, 'walk', true);
           this.stage.addChild((<unknown>boy) as Container);
+        }
+        const dragonSpineData = (<any>getResource('dragon')).spineData;
+        if (dragonSpineData) {
+          const dragon = new Spine(dragonSpineData);
+          dragon.x = centerX / 2;
+          dragon.y = centerY;
+          dragon.state.setAnimation(0, 'flying', true);
+          this.stage.addChild((<unknown>dragon) as Container);
         }
       });
     }

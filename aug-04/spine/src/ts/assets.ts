@@ -45,5 +45,9 @@ export default {
       key: 'boy',
       url: 'spine/spineboy.json',
     },
+    {
+      key: 'dragon',
+      url: 'spine/dragon.json',
+    },
   ],
 };
