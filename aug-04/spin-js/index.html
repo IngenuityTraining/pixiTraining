@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spine</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+    <script src='pixi-spine.js'></script>
+</head>
+<body>
+
+<script>
+    const app = new PIXI.Application({
+        width: 1024,
+        height: 720,
+        backgroundColor: 0xdddddd
+    });
+    document.body.appendChild(app.view);
+    const centerX = app.view.width/2;
+    const bottom = app.view.height;
+
+    app.loader.add('boy', 'spine/spineboy.json')
+        .add('dragon', 'spine/dragon.json')
+        .add('goblin', 'spine/goblins.json')
+        .load(onloaded);
+
+    function onloaded(loader, res) {
+        console.log("boy", res);
+        const boy = new PIXI.spine.Spine(res.boy.spineData);
+        boy.x = centerX;
+        boy.y = bottom;
+        app.stage.addChild(boy);
+
+        // to avoid jerk in animation change
+        boy.stateData.setMix('walk', 'jump', 0.5);
+        boy.stateData.setMix('jump', 'walk', 0.25);
+
+        if(boy.state.hasAnimation('walk')) {
+            boy.state.setAnimation(0, 'walk', true);
+            boy.state.timeScale = 0.5;
+        }
+
+        boy.interactive = true;
+        boy.buttonMode = true;
+
+        boy.on('click', ()=>{
+            boy.state.setAnimation(0,'jump', false);
+            boy.state.addAnimation(0, 'walk', true, 0);
+        });
+
+        const gob = new PIXI.spine.Spine(res.goblin.spineData);
+        gob.x = centerX - (centerX / 2);
+        gob.y = bottom;
+        app.stage.addChild(gob);
+
+        //skin
+        let currentSkin = 'goblin';
+        gob.skeleton.setSkinByName(currentSkin);
+        gob.state.setAnimation(0, 'walk', true);
+
+        gob.interactive = true;
+        gob.buttonMode = true;
+
+        gob.on('click', ()=> {
+            currentSkin = gob.skeleton.skin.name === 'goblin' ? 'goblingirl' : 'goblin';
+            gob.skeleton.setSkinByName(currentSkin);
+        });
+    }
+</script>
+</body>
+</html>
